@@ -1,0 +1,58 @@
+body {
+	background-image: url('grey_wash_wall.png');
+}
+
+.bannerimg_container{
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.bannerimg{
+	opacity: 0.7;
+	border: solid 0px black;
+	border-radius: 10px;
+	margin:auto;
+
+
+}
+
+.my_panel {
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-bottom: 10%;
+}
+
+.page_title{
+	font-family: 'Poiret One', cursive;
+	text-align: center;
+}
+
+.section_title {
+	text-align: left;
+	font-family: 'Poiret One', cursive;
+	text-decoration: underline;
+	font-size: 150%;
+	color: #b0574a;
+	font-weight: bold;
+}
+
+.sub_title{
+	text-align: left;
+	margin-top: 5%;
+	text-decoration: underline;
+}
+
+.btn_style{
+	color: #b0574a;
+	background-color: #B0A9AA;
+	font-size: 200%;
+	font-family: 'Poiret One', cursive;
+}
+
+.btn_reset_style {
+	color: #b0574a;
+	background-color: #B0A9AA;
+	font-size: 200%;
+	font-family: 'Poiret One', cursive;
+}

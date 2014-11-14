@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SI539 Form Assignment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+	<!-- Bootstrap -->
+	<link href="bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="bootstrap.css" rel="stylesheet" media="screen">
+   <link href="lavanyastyle.css" rel="stylesheet" media="screen">
+   <link href="css/datepicker.css" rel="stylesheet" media="screen">
+   <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+</head>
+
+
+<body>
+   <div class="container col-sm-12 bannerimg_container">
+      <img src="banner_shopsocial.png" class="bannerimg img-responsive" alt="shopsocialbanner">
+   </div>
+
+<div class="panel-group my_panel col-sm-12" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+
+
+<!-- add names, action needs to be PHP, mail function, process.php-->
+
+
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="section_title panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Personal Information
+      </a>
+      </h4>
+    </div>
+   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+   <div class="panel-body">
+
+   <form class="form-horizontal" role="form" action="/yourscript.cgi-or-your-page.html" method="POST" onsubmit="return checkCheckBox(this)">
+
+   <div class="container col-sm-12">
+   <div class="form-group">
+      <label for="firstname" class="col-sm-2 control-label">First Name</label>
+      <div class="col-sm-10">
+         <input type="text" class="form-control" name="firstname" id="firstname" placeholder="John">
+      </div>
+   </div>
+
+   <div class="form-group">
+      <label for="lastname" class="col-sm-2 control-label">Last Name</label>
+      <div class="col-sm-10">
+         <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Smith">
+      </div>
+   </div>
+  
+   <div class="form-group">
+      <label for="username" class="col-sm-2 control-label">User Name</label>
+      <div class="col-sm-10">
+         <input type="text" class="form-control" name="username" id="username" placeholder="jsmith">
+      </div>    
+   </div>
+
+  <div class="form-group">
+      <label for="password1" class="col-sm-2 control-label">Enter Password</label>
+      <div class="col-sm-10">
+         <input type="password" class="form-control" required name="password1" id="password1" placeholder="password">
+      </div>    
+   </div>
+
+   <div class="form-group">
+      <label for="password2" class="col-sm-2 control-label">Confirm Password</label>
+      <div class="col-sm-10">
+         <input type="password" class="form-control" required name="password2" id="password2" onchange="validatePass(this)" placeholder="password">
+      </div> 
+        <span id="password">
+   </span>   
+   </div>  
+   
+   <div class="form-group">
+      <label for="dp3" class="col-sm-2 control-label">Date of Birth</label>
+         <div class="col-sm-3">
+            <input type="text" class="form-control" name="birthdate" id="dp3" placeholder="MM/DD/YYYY">
+         </div>    
+   </div>
+
+   <div class="form-group">
+      <label for="age" class="col-sm-2 control-label">Age</label>
+         <div class="col-sm-1">
+            <input type="text" class="form-control" name="age" id="age" placeholder="21">
+         </div>    
+   </div>
+
+   <div class="form-group">
+      <label for="optionsRadios1" class="col-sm-2 control-label">Gender</label>
+         <div class="col-sm-6">
+            <div class="radio">
+            <label class="radio-inline">
+               <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Male
+            </label>
+            </div>
+            <div class="radio">
+            <label class="radio-inline">
+               <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked> Female 
+            </label>
+            </div>
+         </div>
+   </div>
+
+   <div class="form-group">
+      <label for="phone" class="col-sm-2 control-label">Phone</label>
+      <div class="col-sm-10">
+      <input type="text" name="phone" id="phone" class="form-control" placeholder="(123) 456-7890">
+      </div>  
+   </div>  
+
+   <h5 class="sub_title">Address Information</h5>
+   <div class="form-group">
+
+      <label for="address_street" class="col-sm-2 control-label">Street</label>
+      <div class="col-sm-10">
+      <input type="text" class="form-control" name="address_street" id="address_street" placeholder="123 Webpage Street">
+      </div>
+   </div>   
+
+   <div class="form-group">
+      <label for="address_city" class="col-sm-2 control-label">City</label>
+      <div class="col-sm-10">
+      <input type="text" class="form-control" name="address_city" id="address_city" placeholder="Ann Arbor">
+      </div>
+   </div>
+
+   <!--if time, make it a dropdown of abbreviations of 50 states-->
+   <div class="form-group">
+      <div class="col-sm-12">
+         <div class="form-group row">
+            <label for="address_state" class="col-sm-2 control-label">State</label>
+            <div class="col-sm-3">
+               <input type="text" class="form-control" name="address_state" id="address_state" placeholder="MI">
+            </div>
+     
+            <label for="address_zip" class="col-sm-2 control-label">Zipcode</label>
+            <div class="col-sm-5">
+               <input type="text" class="form-control" name="address_zip" id="address_zip" placeholder="12345">
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <div class="form-group">
+      <label for="exampleInputEmail2" class="col-sm-2 control-label">Email Address</label>
+      <div class="col-sm-10">
+      <input type="email" class="form-control " name="email" id="exampleInputEmail2" placeholder="johnsmith@example.com">
+      <input type="checkbox"> Send notifications to this email
+      </div>
+   </div>
+
+</div>
+</form>           
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<!--SECOND FORM-->
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title section_title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+         Profile Information</a>
+      </h4>
+    </div>
+
+   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+
+         <form class="form-horizontal" role="form" action="/yourscript.cgi-or-your-page.html" method="POST" onsubmit="return checkCheckBox(this)">
+      <div class="container col-sm-12">
+<div class="form-group container">
+      <label for="profile-pic" class="col-sm-2 control-label">Upload picture: *</label>
+      <div class="col-sm-10">
+         <input type="file" name="profile-pic" id="profile-pic" accept="image/gif, image/jpeg, image/png" required onchange="readURL(this);"><br>   
+      <img id="blah" src="icon-profile.png" alt="your image" /><br>
+      </div>
+</div>
+
+<div class="form-group">
+      <label for="occupation" class="col-sm-2 control-label">Occupation</label>
+      <div class="col-sm-10">
+         <input type="text" name="occupation" id="occupation" size="20" placeholder = "Teacher" class="form-control">
+      </div>
+</div>
+
+<div class="form-group">
+      <label for="city" class="col-sm-2 control-label">City</label>
+      <div class="col-sm-10">
+         <input type="text" name="city" id="city" size="10" placeholder="Ann Arbor" class="form-control">
+      </div>
+</div>
+
+<div class="form-group">
+      <label for="state" class="col-sm-2 control-label">State</label>
+      <div class="col-sm-2">
+         <input type="text" name="state" id="state" size="10" placeholder = "MI" class="form-control">
+      </div>
+</div>
+
+<!--can we choose more than one? how to tell what is selected-->
+<div class="form-group">
+      <label for="interest" class="col-sm-2 control-label">What are your shopping interests:</label>
+      <div class="col-sm-10">
+         <select name="interest" id="interest" size="5" multiple class="form-control">
+            <option value="shoes" selected>Shoes</option>
+            <option value="apparel">Apparel</option>
+            <option value="books">Books</option>
+            <option value="antiques">Antiques</option>
+            <option value="food">Food</option>
+         </select>
+      </div>
+</div>
+
+<!--can we show the range in the slider-->
+<div class="form-group">
+      <label for="budget" class="col-sm-2 control-label">Your Budget: $</label>
+      <div class="col-sm-10">
+         <input type="range" id="budget" name="budget" min="0" max="1000" step="100" value="100" onchange="updateBudget(this)"><span id="budget1"></span>
+      </div>
+</div>
+
+<div class="form-group">
+      <label for="about" class="col-sm-2 control-label">About Yourself:</label>
+      <div class="col-sm-10">
+         <textarea maxlength="500" id="about" placeholder="Please tell us a little bit about yourself!" class="form-control" name="about"></textarea>
+      </div>
+</div>
+
+<div class="form-group">
+      <label for="language" class="col-sm-2 control-label">Primary Language:</label>
+      <div class="col-sm-6">
+         <input type="text" name="language" size="20" placeholder = "ex. Spanish" class="form-control" id="language"> <br><br>
+         <input type="checkbox" value="0" name="agree" id="checkme"/> I agree to the <span ><a href="$">Terms and Conditions</a></span> <br>
+         <button type="button" name="sendNewSms" class="btn btn-default btn-lg btn_style" id="sendNewSms" value=" Register " >Submit</button> 
+         <button type="button" class="btn btn-default btn-lg btn_reset_style"  value="Reset">Reset </button>
+      </div>
+</div>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+<!--JAVASCRIPT-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-formhelpers.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript">
+
+
+// datepicker javascript
+   $(function () {
+                
+      $('#dp3').datepicker({
+         format: "mm/dd/yyyy"
+      });  
+            
+   });
+
+   </script>
+   <script>
+     
+/*accordion function*/
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+ 
+/* Compares the two passwords entered by the user and validates if they are the same */
+function validatePass(pass2){
+	pass1 = $('[name="password1"]');
+	if(pass2.value != pass1.val()){
+		$("#password").html("<br> <b>Error:</b> " + "Passwords don't match.");
+		error=true;
+		}
+   else{
+		$("#password").html("");
+			error=false;
+	}
+}
+
+/*submit button becomes active when terms and conditions are selected*/
+document.getElementById("sendNewSms").disabled=true;
+var checker = document.getElementById('checkme');
+var sendbtn = document.getElementById('sendNewSms');
+// when unchecked or checked, run the function
+checker.onchange = function(checkme){
+    if(this.checked){
+        sendbtn.disabled = false;
+    } else {
+        sendbtn.disabled = true;
+    }
+
+}
+
+/*file reader for choosing profile picture */
+function readURL(input) {
+   if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+         $('#blah')
+         .attr('src', e.target.result)
+         .width(150)
+         .height(150);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+   }
+}
+
+/* Used for displaying the value in the input of type 'range' */
+function updateBudget(sal){
+      $("#budget").html("$ "+sal.value);
+}
+
+
+	</script>	
+
+<!--END OF JAVASCRIPT-->	
+
+
+</body>
+</html>
+
+
